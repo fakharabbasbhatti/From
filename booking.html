@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Calendar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    .calendar-container {
+      max-width: 400px;
+      margin: 50px auto;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+    }
+
+    .calendar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .month-year {
+      font-weight: bold;
+    }
+
+    .availability {
+      background-color: #e6fff2;
+      color: #1db954;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.85em;
+    }
+
+    .calendar {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 5px;
+      text-align: center;
+    }
+
+    .calendar div {
+      padding: 10px 0;
+    }
+
+    .calendar .day {
+      font-weight: bold;
+      color: #555;
+    }
+
+    .calendar .date {
+      cursor: pointer;
+      color: #000;
+      border-radius: 4px;
+    }
+
+    .calendar .disabled {
+      color: #ccc;
+      cursor: default;
+    }
+
+    .calendar .highlight {
+      color: #0a5cff;
+      font-weight: bold;
+    }
+
+    .calendar .date:hover:not(.disabled) {
+      background-color: #f0f0f0;
+    }
+
+    @media (max-width: 500px) {
+      .calendar-container {
+        margin: 20px;
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="calendar-container">
+    <div class="calendar-header">
+      <span class="month-year">April 2025</span>
+      <span class="availability">✔ Real-time availability</span>
+    </div>
+    <div class="calendar">
+      <div class="day">Sun</div><div class="day">Mon</div><div class="day">Tue</div><div class="day">Wed</div><div class="day">Thu</div><div class="day">Fri</div><div class="day">Sat</div>
+
+      <!-- Dates (assuming fixed start day and layout) -->
+      <!-- Week 1 -->
+      <div class="date disabled"></div><div class="date disabled"></div><div class="date">1</div><div class="date">2</div><div class="date">3</div><div class="date">4</div><div class="date">5</div>
+      <!-- Week 2 -->
+      <div class="date">6</div><div class="date">7</div><div class="date">8</div><div class="date">9</div><div class="date">10</div><div class="date">11</div><div class="date">12</div>
+      <!-- Week 3 -->
+      <div class="date">13</div><div class="date">14</div><div class="date">15</div><div class="date">16</div><div class="date">17</div><div class="date">18</div><div class="date">19</div>
+      <!-- Week 4 -->
+      <div class="date">20</div><div class="date">21</div><div class="date">22</div><div class="date">23</div><div class="date">24</div><div class="date">25</div><div class="date highlight">26</div>
+      <!-- Week 5 -->
+      <div class="date">27</div><div class="date">28</div><div class="date">29</div><div class="date">30</div><div class="date disabled"></div><div class="date disabled"></div><div class="date disabled"></div>
+    </div>
+    <p style="font-size: 0.85em; margin-top: 10px; text-align: center; color: #777;">Click a date to browse availability</p>
+  </div>
+
+  <script>
+    document.querySelectorAll('.calendar .date').forEach(date => {
+      if (!date.classList.contains('disabled')) {
+        date.addEventListener('click', () => {
+          alert('You clicked date: ' + date.textContent);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

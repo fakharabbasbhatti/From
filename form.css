@@ -1,0 +1,95 @@
+.form-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 2rem;
+  background: linear-gradient(to bottom, #e9dffc, #ffffff);
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
+
+.form-heading {
+  font-size: 24px;
+  color: #6f4fd5;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.8rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 16px;
+  color: #6f4fd5;
+  margin-bottom: 0.6rem;
+}
+
+.toggle-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.toggle-btn {
+  position: relative;
+  border: none;
+  padding: 0.6rem 2.5rem 0.6rem 1.5rem;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #f0e1d6;
+  color: #a485c5;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* YES button when active */
+.toggle-btn.yes.active {
+  background-color: #7061F3;
+  color: white;
+}
+
+/* Right-side dot */
+.toggle-btn .dot {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+/* YES button active dot */
+.toggle-btn.yes.active .dot {
+  background-color: #6f4fd5;
+  box-shadow: 0 0 0 4px white;
+}
+
+/* NO button always shows purple dot */
+.toggle-btn.no .dot {
+  background-color: #d9c5e9;
+}
+
+.continue-btn {
+  background-color: #f0e1d6;
+  color: #a485c5;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.continue-btn:hover {
+  background-color: #e0d2c3;
+}
+
+@media (max-width: 600px) {
+  .toggle-group {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
